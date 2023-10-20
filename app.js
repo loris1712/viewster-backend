@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 app.use('/api', placesRoutes);
 
 // Utilizza le rotte per le chiamate API relative agli utenti
-app.use('/users', usersRoutes);
+app.use('/users', usersRoutes); 
 
 // Altre configurazioni e middleware dell'app Express
 // ...
