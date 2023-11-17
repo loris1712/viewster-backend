@@ -93,7 +93,7 @@ passport.deserializeUser((id, done) => {
 passport.use(new GoogleStrategy({
   clientID: '373721254470-47gt9m3jiclkll427q2tujm9q6h2d3a8.apps.googleusercontent.com',
   clientSecret: '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',
-  callbackURL: '/users/auth/google/callback'
+  callbackURL: 'https://viewster-backend.vercel.app/users/auth/google/callback'
 },
 async (accessToken, refreshToken, profile, done) => {
   try {
@@ -143,7 +143,7 @@ router.get('/auth/google/callback',
     
     const userData = req.user.emails[0].value;
 
-    const redirectUrl = `http://localhost:3000/loading?info=${userData}`;
+    const redirectUrl = `https://viewster.vercel.app/loading?info=${userData}`;
     res.redirect(redirectUrl);
   }
 );
